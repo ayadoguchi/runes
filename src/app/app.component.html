@@ -1,0 +1,74 @@
+<h3 md-subheader>Rune Fortune Telling</h3>
+<section *ngIf="isShow">
+	<mat-card>
+	<h4>{{result.title}}</h4>
+	<p>{{result.discription}}</p>
+	<p>{{result.unnsei}}</p>
+	</mat-card>
+	<div class="result">
+		<span class="rune size-XL {{result.icon}}"><span *ngIf="result.icon.length < 2">{{result.icon}}</span></span>
+	</div>
+</section>
+<mat-card *ngIf="isShow">
+	<mat-tab-group>
+	  <mat-tab label="一言占い">
+		<p>{{result.unnsei1}}</p>
+	  </mat-tab>
+	  <mat-tab label="恋愛">
+		<p>{{result.unnsei2}}</p>
+	  </mat-tab>
+	  <mat-tab label="健康">
+		<p>{{result.unnsei3}}</p>
+	  </mat-tab>
+	   <mat-tab label="金運">
+		<p>{{result.unnsei4}}</p>
+	  </mat-tab>
+	</mat-tab-group>
+</mat-card>
+
+<mat-spinner *ngIf="isLoding" class="spinner"></mat-spinner>
+
+<div class="button-group">
+	<button mat-button (click)="onClick()">Divination</button>
+</div>
+
+<h3 md-subheader>Runes</h3>
+<div class="example-container mat-elevation-z8">
+	<mat-table #table [dataSource]="dataSource">
+
+	<!-- Position Column -->
+	<ng-container matColumnDef="position">
+	  <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+	  <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+	</ng-container>
+
+	<!-- Name Column -->
+	<ng-container matColumnDef="title">
+	  <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+	  <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+	</ng-container>
+
+	<!-- Name Column -->
+	<ng-container matColumnDef="icon">
+	  <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+	  <mat-cell *matCellDef="let element">
+	  	<span class="rune size-L {{element.icon}}"><span *ngIf="element.icon.length < 2">{{element.icon}}</span></span>
+	  </mat-cell>
+	</ng-container>
+
+	<!-- Weight Column -->
+	<ng-container matColumnDef="discription">
+	  <mat-header-cell *matHeaderCellDef> Discription </mat-header-cell>
+	  <mat-cell *matCellDef="let element"> {{element.discription}} </mat-cell>
+	</ng-container>
+
+	<!-- Symbol Column -->
+	<ng-container matColumnDef="unnsei">
+	  <mat-header-cell *matHeaderCellDef> Unnsei </mat-header-cell>
+	  <mat-cell *matCellDef="let element"> {{element.unnsei}} </mat-cell>
+	</ng-container>
+
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+	</mat-table>
+</div>

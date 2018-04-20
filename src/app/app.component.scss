@@ -1,0 +1,112 @@
+
+@font-face {
+  font-family: 'rune';
+  src: url(/assets/fonts/RuneAMN_Sans_1.20171016.otf);
+}
+.demo-2 {
+	padding: 0 10px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  .test {
+    color: red;
+  }
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.button-group {
+	text-align: center;
+	padding: 10px;
+	background: #eee;
+}
+
+.spinner {
+  margin: 20px auto;
+}
+
+.rune {
+  font-family: rune;
+  &.size-L {
+    font-size: 30px;
+  }
+  &.size-XL {
+    font-size: 39px;
+    position: absolute;
+    top: 43%;
+    left: 45%;
+    color: antiquewhite;
+    font-weight: bold;
+    background: rgba(0,0,0,.8);
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: table;
+    padding-top: 12px;
+  }
+
+  &.EE {
+    &:before {
+      content: '\016D6';
+    }
+  }
+  &.MM {
+    &:before {
+      content: '\016DC';
+    }
+  }
+  &.KK {
+    &:before {
+      content: '\016B2';
+    }
+  }
+  &.II {
+    &:before {
+      content: '\016C1';
+    }
+  }
+  &.HH {
+    &:before {
+      content: '\016BA';
+    }
+  }
+  &.SS {
+    &:before {
+      content: '\016A6';
+    }
+  }
+  &.JJ {
+    &:before {
+      content: '\016B7';
+    }
+  }
+}
+
+.result {
+  max-width: 500px;
+  max-height: 500px;
+  margin: 10px auto;
+  position: relative;
+  background-image: url(/assets/MagicCircle_RuneAMN_20141019.svg);
+  background-size: auto 500px;
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center center;
+}
